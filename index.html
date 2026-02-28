@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wolf Truck Management</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: white;
+}
+header {
+    background: linear-gradient(to right, gold, #0f2027);
+    padding: 20px;
+    text-align: center;
+}
+h1 {
+    margin: 0;
+    font-size: 28px;
+}
+.section {
+    padding: 20px;
+}
+.card {
+    background: rgba(255,255,255,0.1);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+button {
+    background: gold;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+input {
+    padding: 8px;
+    margin: 5px 0;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #111;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>🐺 Wolf Truck Management</h1>
+    <p>Manage Your Fleet Professionally</p>
+</header>
+
+<div class="section">
+    <h2>Add Truck / Ongeza Lori</h2>
+    <div class="card">
+        <input type="text" id="truckName" placeholder="Truck Name / Jina la Lori">
+        <input type="text" id="truckNumber" placeholder="Truck Number / Namba ya Lori">
+        <button onclick="addTruck()">Add Truck</button>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Truck List / Orodha ya Malori</h2>
+    <div id="truckList"></div>
+</div>
+
+<footer>
+    © 2026 Wolf Truck Management | Blue & Gold Edition
+</footer>
+
+<script>
+function addTruck() {
+    var name = document.getElementById("truckName").value;
+    var number = document.getElementById("truckNumber").value;
+
+    if(name === "" || number === "") {
+        alert("Please fill all fields / Tafadhali jaza sehemu zote");
+        return;
+    }
+
+    var list = document.getElementById("truckList");
+    var newTruck = document.createElement("div");
+    newTruck.className = "card";
+    newTruck.innerHTML = "<strong>" + name + "</strong><br>Number: " + number;
+    list.appendChild(newTruck);
+
+    document.getElementById("truckName").value = "";
+    document.getElementById("truckNumber").value = "";
+}
+</script>
+
+</body>
+                                         </html>Add website file
